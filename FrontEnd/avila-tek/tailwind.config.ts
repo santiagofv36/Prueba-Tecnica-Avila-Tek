@@ -22,6 +22,7 @@ const config: Config = {
         quatertiary: "#667085",
         "b-secondary": "#EAECF0",
         "t-primary": "#101828",
+        "card-primary": "#53389E",
       },
     },
   },

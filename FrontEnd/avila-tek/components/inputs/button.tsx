@@ -4,12 +4,13 @@ interface ButtonProps {
   text: string;
   secondary?: boolean;
   onClick: () => void;
+  className?: string;
 }
 
-const Button = ({ text, secondary, onClick }: ButtonProps) => {
+const Button = ({ text, secondary, onClick, className }: ButtonProps) => {
   return (
     <button
-      className={`px-4 py-2 rounded-md ${
+      className={` rounded-md ${className} ${
         secondary ? "bg-primary text-white" : "text-btn-tertiary"
       }`}
       onClick={onClick}

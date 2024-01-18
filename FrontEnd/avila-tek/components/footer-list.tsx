@@ -10,7 +10,7 @@ const FooterList = ({ title, items }: FooterListProps) => {
       <ul className="flex flex-col gap-4">
         {items.map((product, i) => (
           <li key={i} className="text-primary text-sm">
-            <div className="flex gap-1">
+            <div className="flex gap-1 items-center">
               {product.name}
               {product.icon && product.icon}
             </div>

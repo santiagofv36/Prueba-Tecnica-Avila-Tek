@@ -3,8 +3,9 @@
 import { useRouter } from "next/navigation";
 import Logo from "./svg/logo";
 import Button from "./inputs/button";
+import { Menu } from "lucide-react";
 
-const links: Record<string,string>[] = [
+const links: Record<string, string>[] = [
   {
     text: "Home",
     href: "/",
@@ -27,11 +28,13 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <nav className="flex gap-3 items-center justify-between">
+    <nav className="flex gap-3 items-center justify-between p-2 xl:p-0">
+      {/* Apartado del logo */}
       <div className="flex flex-start gap-5">
         <Logo />
-        <ul className="flex gap-3 mt-1 justify-start">
-          {links.map((link,i) => (
+        {/* Lista de links */}
+        <ul className="hidden md:flex gap-3 mt-1 justify-start ">
+          {links.map((link, i) => (
             <li
               key={i}
               className="cursor-pointer text-btn-tertiary"
@@ -42,9 +45,20 @@ const Header = () => {
           ))}
         </ul>
       </div>
-      <div>
-        <Button text="Log in" onClick={() => {}} />
-        <Button text="Sign Up" secondary onClick={() => {}} />
+      {/* Boton para movil */}
+      <div className="md:hidden">
+        <Menu size={24} 
+          onClick={() => {}}
+        />
+      </div>
+      <div className="hidden md:flex">
+        <Button text="Log in" onClick={() => {}} className="px-4 py-2" />
+        <Button
+          text="Sign Up"
+          secondary
+          onClick={() => {}}
+          className="px-4 py-2"
+        />
       </div>
     </nav>
   );
