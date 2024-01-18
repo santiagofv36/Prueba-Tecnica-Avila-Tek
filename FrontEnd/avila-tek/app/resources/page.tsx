@@ -7,10 +7,11 @@ import giveUs from "@/assets/give-us.png";
 import Share from "@/components/svg/share";
 import Light from "@/components/svg/light";
 import Manage from "@/components/svg/manage";
+import { Integration } from "@/utils/types";
 
 // Lista de features para ser renderizadas de manera que no se repita cada una de las tarjetas
 
-const Features = [
+const Features: Integration[] = [
   {
     title: "Share team imboxes",
     description:

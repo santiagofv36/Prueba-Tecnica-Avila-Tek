@@ -3,8 +3,9 @@ import FooterList from "./footer-list";
 import AppStoreIcon from "./svg/app-store";
 import PlayStoreIcon from "./svg/play-store";
 import Badge from "./badge";
+import { CompanyInfo, FooterLink } from "@/utils/types";
 
-const Products = [
+const Products: FooterLink[] = [
   {
     name: "Overview",
   },
@@ -13,7 +14,7 @@ const Products = [
   },
   {
     name: "Solutions",
-    icon: <Badge text="New" className="text-xs w-[50px]"/>, // TODO: Replace with badge new
+    icon: <Badge text="New" className="text-xs w-[50px]" />, // TODO: Replace with badge new
   },
   {
     name: "Tutorials",
@@ -26,7 +27,7 @@ const Products = [
   },
 ];
 
-const Companies = [
+const Companies : CompanyInfo[] = [
   { name: "About us" },
   { name: "Careers" },
   { name: "Press" },

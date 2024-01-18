@@ -10,7 +10,7 @@ interface FAQCardProps {
 }
 
 export default function FAQCard({ question, answer, last }: FAQCardProps) {
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [showAnswer, setShowAnswer] = useState<boolean>(false);
 
   return (
     <div className="flex flex-col justify-start items-center w-full px-5">

@@ -8,14 +8,14 @@ import GASCard from "@/components/cards/gas-card";
 import women from "../assets/woman.png";
 import Star from "@/components/svg/star";
 import FAQCard from "@/components/cards/faq-card";
+import { useState } from "react";
 
 // Lista del 0 al 4 para iterar y renderizar las estrellas
-const stars = [0, 1, 2, 3, 4];
-
+const stars: number[] = [0, 1, 2, 3, 4];
 
 //Lista de preguntas para el apartado de FAQ
 
-const Questions = [
+const Questions: Record<string, string>[] = [
   {
     question: "Is there a free trial available?",
     answer:
@@ -49,6 +49,8 @@ const Questions = [
 ];
 
 export default function Home() {
+  const [email, setEmail] = useState<string>("");
+
   return (
     // Contenedor principal del Hero Section
     <div className="flex flex-col gap-5">
@@ -75,8 +77,8 @@ export default function Home() {
             <Input
               type="text"
               placeholder="Enter your email"
-              value=""
-              onChange={() => {}}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full"
               icon={<QuestionMark hint="We need your email to contact you!" />}
             />

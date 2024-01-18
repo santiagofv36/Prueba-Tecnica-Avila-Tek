@@ -8,7 +8,6 @@ interface InputProps {
   className?: string;
   icon?: React.ReactNode;
 }
-//TODO: Arreglar el icono colocarlo como un span y un flex-between
 
 const Input = ({
   type = "text",
@@ -19,7 +18,7 @@ const Input = ({
   icon,
 }: InputProps) => {
   return (
-    <div className="relative">
+    <div className="relative flex items-center">
       <input
         type={type}
         placeholder={placeholder}
@@ -27,7 +26,7 @@ const Input = ({
         onChange={onChange}
         className={`border-solid border-[#D0D5DD] text-[#667085] font-light text-[16px] rounded-md p-3 ${className} w-[335px]`}
       />
-      {icon && <div className="absolute right-4 top-5">{icon}</div>}
+      {icon && <div className="absolute right-2">{icon}</div>}
     </div>
   );
 };

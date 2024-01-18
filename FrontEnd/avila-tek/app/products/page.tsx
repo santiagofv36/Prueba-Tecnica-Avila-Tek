@@ -8,9 +8,10 @@ import Jira from "@/components/svg/jira";
 import Dropbox from "@/components/svg/dropbox";
 import ListCard from "@/components/cards/list-card";
 import Badge from "@/components/badge";
+import { Integration } from "@/utils/types";
 
 // Lista de integraciones para ser renderizadas de manera que no se repita cada una de las tarjetas
-const Integrations = [
+const Integrations: Integration[] = [
   {
     title: "Notion integration",
     description:

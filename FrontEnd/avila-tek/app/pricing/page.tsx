@@ -1,14 +1,15 @@
 "use client";
 import Button from "@/components/inputs/button";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import women1 from "@/assets/women1.png";
 import women2 from "@/assets/women2.png";
 import women3 from "@/assets/women3.png";
 import giveUs from "@/assets/give-us.png";
 import men from "@/assets/men.png";
+import { Photo } from "@/utils/types";
 
 // Lista de fotos para el apartado de Pricing
-const Photos = [
+const Photos: Photo[] = [
   {
     src: women1,
     alt: "women 1",
@@ -32,9 +33,8 @@ const Photos = [
 ];
 
 export default function Page() {
-  {
-    /* Pricing section */
-  }
+  // Pricing section
+
   return (
     <section className="flex flex-col justify-between items-center gap-5 p-20 md:flex-row bg-[#F9FAFB]my-16">
       {/* Parte de la izquierda del contenedor (parte de arriba en mobile) */}

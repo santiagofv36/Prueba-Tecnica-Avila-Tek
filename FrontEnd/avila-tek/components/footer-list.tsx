@@ -1,6 +1,8 @@
+import { FooterLink } from "@/utils/types";
+
 interface FooterListProps {
   title: string;
-  items: { name: string; icon?: React.ReactNode }[];
+  items: FooterLink[];
 }
 
 const FooterList = ({ title, items }: FooterListProps) => {
