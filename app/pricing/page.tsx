@@ -1,12 +1,13 @@
 "use client";
 import Button from "@/components/inputs/button";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import women1 from "@/assets/women1.png";
 import women2 from "@/assets/women2.png";
 import women3 from "@/assets/women3.png";
 import giveUs from "@/assets/give-us.png";
 import men from "@/assets/men.png";
 import { Photo } from "@/utils/types";
+import { notAvailableYet } from "@/components/not-available-yet";
 
 // Lista de fotos para el apartado de Pricing
 const Photos: Photo[] = [
@@ -47,13 +48,13 @@ export default function Page() {
         </p>
         <div className="flex gap-4 flex-col sm:flex-row md:w-11/12 lg:justify-end md:flex-row-reverse">
           <Button
-            onClick={() => {}}
+            onClick={notAvailableYet}
             secondary
             text="Get Started"
             className="w-full p-3 text-sm xl:w-1/4"
           />
           <Button
-            onClick={() => {}}
+            onClick={notAvailableYet}
             text="Learn More"
             className="w-full p-3 bg-white text-[#344054] text-sm xl:w-1/4 border-2 border-[#D0D5DD]"
           />
@@ -63,6 +64,7 @@ export default function Page() {
       <div className="flex flex-col w-full">
         {/* Para dispositivos de 1024px hacia adelante esta distribución no se verá */}
         <div className="flex flex-col gap-4 relative lg:hidden">
+          {/* Como todas las fotos tendrán el mismo tamaño se puede generalizar */}
           {Photos.map((photo, i) => (
             <div key={i} className="max-h-[200px] overflow-hidden">
               <Image src={photo.src} alt={photo.alt} className="w-full" />

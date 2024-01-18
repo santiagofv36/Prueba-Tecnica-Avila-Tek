@@ -2,12 +2,13 @@
 import Badge from "@/components/badge";
 import GASCard from "@/components/cards/gas-card";
 import ListCard from "@/components/cards/list-card";
-import Button from "@/components/inputs/button";
+import Button  from "@/components/inputs/button";
 import giveUs from "@/assets/give-us.png";
 import Share from "@/components/svg/share";
 import Light from "@/components/svg/light";
 import Manage from "@/components/svg/manage";
 import { Integration } from "@/utils/types";
+import { notAvailableYet } from "@/components/not-available-yet";
 
 // Lista de features para ser renderizadas de manera que no se repita cada una de las tarjetas
 
@@ -49,13 +50,13 @@ export default function Page() {
             </p>
             <div className="flex gap-4 flex-col sm:flex-row md:w-11/12 lg:justify-end md:flex-row-reverse">
               <Button
-                onClick={() => {}}
+                onClick={notAvailableYet}
                 secondary
                 text="Get Started"
                 className="w-full p-3 text-sm xl:w-1/6"
               />
               <Button
-                onClick={() => {}}
+                onClick={notAvailableYet}
                 text="Learn More"
                 className="w-full p-3 bg-white text-[#344054] text-sm xl:w-1/6"
               />

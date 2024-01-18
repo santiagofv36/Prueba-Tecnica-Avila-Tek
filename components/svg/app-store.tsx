@@ -1,4 +1,7 @@
-const AppStoreIcon = () => {
+"use client";
+import { notAvailableYet } from "../not-available-yet";
+
+const AppStoreIcon: React.FC = () => {
   return (
     <svg
       width="135"
@@ -6,6 +9,8 @@ const AppStoreIcon = () => {
       viewBox="0 0 135 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="cursor-pointer"
+      onClick={notAvailableYet}
     >
       <rect x="0.5" y="0.5" width="134" height="39" rx="6.5" fill="black" />
       <rect x="0.5" y="0.5" width="134" height="39" rx="6.5" stroke="#A6A6A6" />

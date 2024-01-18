@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/inputs/button";
+import Button  from "@/components/inputs/button";
 import Input from "@/components/inputs/input";
 import ActiveUsers from "@/components/svg/active-users";
 import Chart from "@/components/svg/chart";
@@ -9,6 +9,7 @@ import women from "../assets/woman.png";
 import Star from "@/components/svg/star";
 import FAQCard from "@/components/cards/faq-card";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 // Lista del 0 al 4 para iterar y renderizar las estrellas
 const stars: number[] = [0, 1, 2, 3, 4];
@@ -51,6 +52,22 @@ const Questions: Record<string, string>[] = [
 export default function Home() {
   const [email, setEmail] = useState<string>("");
 
+  // Funcion para manejar el click del boton para enviar el email
+
+  const handleClick = () => {
+    // regex para validar el email
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    // Si el email no es válido, se muestra un toast
+    // Para evitar el uso innecesario de else, se utiliza un "Guard Clause" verificando si es correcto el email
+    if (!re.test(email)) {
+      toast.error("Please enter a valid email");
+      return;
+    }
+    // Si el email es válido, se muestra un toast y se limpia el input
+    toast.success("Email sent!");
+    setEmail("");
+  };
+
   return (
     // Contenedor principal del Hero Section
     <div className="flex flex-col gap-5">
@@ -75,7 +92,7 @@ export default function Home() {
         <div className="flex xl:flex-row lg:flex-row md:flex-row flex-col items-start justify-center gap-5">
           <div className="flex flex-col gap-5 xl:w-[307.94px] lg:w-[307.94px] md:w-[307.94px] w-full">
             <Input
-              type="text"
+              type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -87,7 +104,7 @@ export default function Home() {
             </p>
           </div>
           <Button
-            onClick={() => {}}
+            onClick={handleClick}
             secondary
             text="Get Started"
             className="p-3 xl:w-[113.66px] lg:w-[113.66px] md:w-[113.66px] w-full"
@@ -141,7 +158,11 @@ export default function Home() {
               Love the simplicity of the service and the prompt customer
               support. We can’t imagine working without it.
             </h1>
-            <p className="text-white">----- Renee Wells</p>
+            <p className="text-white flex items-center gap-1">
+              {/* Linea al lado del nombre */}
+              <span className="border-2 h-0 w-10" />
+              Renee Wells
+            </p>
             <p className="text-tertiary font-thin">
               Product Designer, Quotient
             </p>

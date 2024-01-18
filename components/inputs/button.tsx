@@ -7,6 +7,8 @@ interface ButtonProps {
   className?: string;
 }
 
+// Boton generico con el color primario
+
 const Button = ({ text, secondary, onClick, className }: ButtonProps) => {
   return (
     <button
@@ -21,3 +23,4 @@ const Button = ({ text, secondary, onClick, className }: ButtonProps) => {
 };
 
 export default Button;
+

@@ -10,6 +10,7 @@ interface FAQCardProps {
 }
 
 export default function FAQCard({ question, answer, last }: FAQCardProps) {
+  // Estado para manejar si se muestra la respuesta a la pregunta
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
 
   return (
@@ -32,10 +33,10 @@ export default function FAQCard({ question, answer, last }: FAQCardProps) {
             />
           )}
         </div>
+        {/* Condicional para verificar si se ve la descripcion */}
         {showAnswer && (
           <div className="flex flex-col py-2 pr-6">
             <p className="text-btn-tertiary text-sm font-thin">{answer}</p>
-            {/* Condicional para verificar si se ve la descripcion */}
           </div>
         )}
       </div>

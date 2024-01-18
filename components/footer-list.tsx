@@ -1,4 +1,6 @@
+"use client";
 import { FooterLink } from "@/utils/types";
+import { notAvailableYet } from "./not-available-yet";
 
 interface FooterListProps {
   title: string;
@@ -12,7 +14,10 @@ const FooterList = ({ title, items }: FooterListProps) => {
       <ul className="flex flex-col gap-4">
         {items.map((product, i) => (
           <li key={i} className="text-primary text-sm">
-            <div className="flex gap-1 items-center">
+            <div
+              className="flex gap-1 items-center cursor-pointer"
+              onClick={notAvailableYet}
+            >
               {product.name}
               {product.icon && product.icon}
             </div>

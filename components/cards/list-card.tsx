@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Button from "../inputs/button";
+import { notAvailableYet } from "../not-available-yet";
 
 interface ListCardProps {
   title: string;
@@ -22,7 +23,11 @@ export default function ListCard({
         {description}
       </p>
       <span className="flex gap-5">
-        <Button onClick={() => {}} text={buttonText} className="text-primary" />
+        <Button
+          onClick={notAvailableYet}
+          text={buttonText}
+          className="text-primary"
+        />
         <ArrowRight className="text-primary" />
       </span>
     </div>
