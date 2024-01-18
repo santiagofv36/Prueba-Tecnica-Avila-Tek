@@ -10,8 +10,8 @@ export default function Dropbox() {
       <g filter="url(#filter0_dd_434_990)">
         <circle cx="24.5" cy="24" r="21" fill="#0F287F" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M17 12L9.5 16.5L17 21L9.5 25.5L17 30L24.5 25.5L32 30L39.5 25.5L32 21L39.5 16.5L32 12L24.5 16.5L17 12ZM24.5 16.5L32 21L24.5 25.5L17 21L24.5 16.5Z"
           fill="#DAF8FE"
         />
@@ -25,9 +25,9 @@ export default function Dropbox() {
           width="54"
           height="54"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

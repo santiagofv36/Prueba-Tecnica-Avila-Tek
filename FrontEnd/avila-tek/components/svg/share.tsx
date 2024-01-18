@@ -29,7 +29,7 @@ export default function Share() {
           width="44"
           height="44"
           filterUnits="userSpaceOnUse"
-          colorInterpolation-Filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

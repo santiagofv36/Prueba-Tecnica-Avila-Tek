@@ -19,6 +19,13 @@ import Star from "@/components/svg/star";
 import Share from "@/components/svg/share";
 import Light from "@/components/svg/light";
 import Manage from "@/components/svg/manage";
+import women1 from "../assets/women1.png";
+import women2 from "../assets/women2.png";
+import women3 from "../assets/women3.png";
+import men from "../assets/men.png";
+import Image from "next/image";
+import { MinusCircle } from "lucide-react";
+import FAQCard from "@/components/cards/faq-card";
 
 // Lista de integraciones para ser renderizadas de manera que no se repita cada una de las tarjetas
 const Integrations = [
@@ -89,10 +96,61 @@ const stars = [0, 1, 2, 3, 4];
 // Lista de fotos para el apartado de Pricing
 const Photos = [
   {
-    src: "",
-    alt:""
-  }
-]
+    src: women1,
+    alt: "women 1",
+  },
+  {
+    src: women2,
+    alt: "women 2",
+  },
+  {
+    src: women3,
+    alt: "women 3",
+  },
+  {
+    src: giveUs,
+    alt: "Give us",
+  },
+  {
+    src: men,
+    alt: "men",
+  },
+];
+
+//Lista de preguntas para el apartado de FAQ
+
+const Questions = [
+  {
+    question: "Is there a free trial available?",
+    answer:
+      "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+  },
+  {
+    question: "Can I change my plan later?",
+    answer:
+      "Yes, you can change your plan at any time. If you change your plan in the middle of a billing cycle, we’ll prorate your next invoice.",
+  },
+  {
+    question: "What is your cancellation policy",
+    answer:
+      "You can cancel your subscription at any time. Once you cancel, you’ll be billed for the current billing cycle, but you won’t be billed again.",
+  },
+  {
+    question: "Can other info be added to an invoice?",
+    answer:
+      "Yes, you can add a logo, company address, or any other information to your invoice.",
+  },
+  {
+    question: "How does billing work?",
+    answer:
+      "You can pay by credit card or bank transfer. For enterprise customers, we can also support invoicing.",
+  },
+  {
+    question: "How do I change my account email?",
+    answer:
+      "You can change your account email by contacting us directly at untitled@company.com",
+  },
+];
 
 export default function Home() {
   return (
@@ -139,7 +197,7 @@ export default function Home() {
         </div>
       </section>
       {/* Grafico */}
-      <div className="flex justify-center -mt-12">
+      <div className="flex justify-center -mt-24">
         <Chart />
       </div>
       {/* Usuarios Activos */}
@@ -214,7 +272,7 @@ export default function Home() {
           </p>
         </div>
         {/* Iteracion sobre una constante para evitar la repetición de código */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {Features.map((feature, i) => (
             <ListCard
               key={i}
@@ -241,19 +299,96 @@ export default function Home() {
               onClick={() => {}}
               secondary
               text="Get Started"
-              className="w-full p-3 text-sm xl:w-1/6"
+              className="w-full p-3 text-sm xl:w-1/4"
             />
             <Button
               onClick={() => {}}
               text="Learn More"
-              className="w-full p-3 bg-white text-[#344054] text-sm xl:w-1/6 border-2 border-[#D0D5DD]"
+              className="w-full p-3 bg-white text-[#344054] text-sm xl:w-1/4 border-2 border-[#D0D5DD]"
             />
           </div>
         </div>
         {/* Photos of the section */}
-        <div className="flex flex-col">
-
+        <div className="flex flex-col w-full">
+          {/* Para dispositivos de 1024px hacia adelante esta distribución no se verá */}
+          <div className="flex flex-col gap-4 relative lg:hidden">
+            {Photos.map((photo, i) => (
+              <div key={i} className="max-h-[200px] overflow-hidden">
+                <Image src={photo.src} alt={photo.alt} className="w-full" />
+              </div>
+            ))}
+          </div>
+          {/* Aqui no se itera ya que no hay una forma generica de posicionar los elementos */}
+          <div className="hidden lg:flex lg:flex-col gap-5">
+            {/* Fotos de arriba */}
+            <div className="flex gap-5 items-end justify-center">
+              <div className="flex flex-col">
+                <Image
+                  src={women1}
+                  alt="women 1"
+                  width={women1.width / 2}
+                  height={women1.height / 2}
+                />
+              </div>
+              <div className="flex flex-col">
+                <Image
+                  src={women2}
+                  alt="women 2"
+                  width={women2.width / 2}
+                  height={women2.height / 2}
+                />
+              </div>
+            </div>
+            {/* Fotos de abajo */}
+            <div className="flex gap-5 items-start justify-center">
+              <div className="flex flex-col">
+                <Image
+                  src={women3}
+                  alt="women 3"
+                  width={women3.width / 2}
+                  height={women3.height / 2}
+                />
+              </div>
+              <div className="flex flex-col">
+                <Image
+                  src={men}
+                  alt="men"
+                  width={men.width / 2}
+                  height={men.height / 2}
+                />
+              </div>
+              <div className="flex flex-col">
+                <Image
+                  src={giveUs}
+                  alt="women"
+                  width={giveUs.width / 4.0625}
+                  height={giveUs.height / 4.0625}
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+      {/* FAQ Section */}
+      <section className="flex flex-col justify-center items-center md:px-40">
+        {/* Header FAQ */}
+        <div className="px-20 flex flex-col justify-center items-center gap-5">
+          <h1 className="text-t-primary text-3xl text-center">
+            Frequently asked questions
+          </h1>
+          <p className="text-btn-tertiary text-md font-thin text-center">
+            Everything you need to know about the product and billing.
+          </p>
+        </div>
+        {/* FAQ */}
+        {/* Iteracion sobre una constante para evitar la repetición de código */}
+        {Questions.map((question, i) => (
+          <FAQCard
+            question={question.question}
+            answer={question.answer}
+            last={i === Questions.length - 1}
+          />
+        ))}
       </section>
       {/* Testimonials */}
       <GASCard

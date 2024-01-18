@@ -13,7 +13,7 @@ const Products = [
   },
   {
     name: "Solutions",
-    icon: <Badge text="New" className="text-xs p-1"/>, // TODO: Replace with badge new
+    icon: <Badge text="New" className="text-xs w-[50px]"/>, // TODO: Replace with badge new
   },
   {
     name: "Tutorials",

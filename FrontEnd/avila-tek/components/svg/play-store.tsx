@@ -194,7 +194,7 @@ const PlayStoreIcon = () => {
           y2="25.4913"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#00A0FF" />
+          <stop stopColor="#00A0FF" />
           <stop offset="0.0066" stopColor="#00A1FF" />
           <stop offset="0.2601" stopColor="#00BEFF" />
           <stop offset="0.5122" stopColor="#00D2FF" />
@@ -223,7 +223,7 @@ const PlayStoreIcon = () => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#FF3A44" />
-          <stop offset="1" stop-color="#C31162" />
+          <stop offset="1" stopColor="#C31162" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_202_4799"
@@ -233,11 +233,11 @@ const PlayStoreIcon = () => {
           y2="10.3393"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#32A071" />
-          <stop offset="0.0685" stop-color="#2DA771" />
-          <stop offset="0.4762" stop-color="#15CF74" />
-          <stop offset="0.8009" stop-color="#06E775" />
-          <stop offset="1" stop-color="#00F076" />
+          <stop stopColor="#32A071" />
+          <stop offset="0.0685" stopColor="#2DA771" />
+          <stop offset="0.4762" stopColor="#15CF74" />
+          <stop offset="0.8009" stopColor="#06E775" />
+          <stop offset="1" stopColor="#00F076" />
         </linearGradient>
       </defs>
     </svg>

@@ -11,12 +11,12 @@ export default function Slack() {
         <path
           d="M2.5 9C2.5 4.58172 6.08172 1 10.5 1H46.5C50.9183 1 54.5 4.58172 54.5 9V45C54.5 49.4183 50.9183 53 46.5 53H10.5C6.08172 53 2.5 49.4183 2.5 45V9Z"
           fill="white"
-          shape-rendering="crispEdges"
+          shapeRendering="crispEdges"
         />
         <path
           d="M3 9C3 4.85786 6.35786 1.5 10.5 1.5H46.5C50.6421 1.5 54 4.85786 54 9V45C54 49.1421 50.6421 52.5 46.5 52.5H10.5C6.35786 52.5 3 49.1421 3 45V9Z"
           stroke="#EAECF0"
-          shape-rendering="crispEdges"
+          shapeRendering="crispEdges"
         />
         <path
           d="M44.2503 25.4997C46.3212 25.4997 48 23.8209 48 21.75C48 19.6791 46.3211 18.0003 44.2502 18.0003C42.1791 18.0003 40.5 19.6793 40.5 21.7503V25.4997H44.2503ZM33.75 25.4997C35.8211 25.4997 37.5 23.8207 37.5 21.7497V11.2503C37.5 9.17926 35.8211 7.50032 33.75 7.50032C31.6789 7.50032 30 9.17925 30 11.2503V21.7497C30 23.8207 31.6789 25.4997 33.75 25.4997Z"
@@ -43,9 +43,9 @@ export default function Slack() {
           width="56"
           height="56"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
